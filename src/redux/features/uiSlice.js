@@ -5,7 +5,7 @@ const uiSlice = createSlice({
   initialState: {
     showContract: false,
     showSideBar: true,
-
+    showSingleProforma: false,
     showCart: false,
   },
   reducers: {
@@ -18,9 +18,13 @@ const uiSlice = createSlice({
     showSideBar: (state, action) => {
       state.showSideBar = !state.showSideBar;
     },
+    showSingleProforma: (state, action) => {
+      state.showSingleProforma = !state.showSingleProforma;
+    },
   },
 });
 
-export const { showContract, showSideBar, showCart } = uiSlice.actions;
+export const { showContract, showSideBar, showCart, showSingleProforma } =
+  uiSlice.actions;
 
 export default uiSlice.reducer;

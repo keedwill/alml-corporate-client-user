@@ -4,8 +4,10 @@ import { NavLink } from "react-router-dom";
 import corporate from "./../assets/images/corporate.png";
 
 import Closesvg from "../svg/CloseSvg";
+import { useSelector } from "react-redux";
 
 const Sidebar = ({ open, showBar }) => {
+  const user = useSelector((state) => state.auth.user);
   const closeBar = () => {
     showBar();
   };
@@ -16,11 +18,14 @@ const Sidebar = ({ open, showBar }) => {
    
     w-60 md:left-0 ${
       open ? "" : "-left-60 duration-500"
-    }   md:relative absolute  bg-white border border-r-gray border-y-0 max-h-screen h-screen flex flex-col justify-between  duration-500 `}
+    }   md:relative absolute  bg-white border border-r-gray border-y-0 h-full max-h-full  flex flex-col justify-between  duration-500 z-10 `}
     >
       <div className="  flex items-center justify-between  mx-2  py-4 pl-2">
         <img src={corporate} className="h-10 " alt="corporate" />
-        <span onClick={closeBar} className=" cursor-pointer">
+        <span
+          onClick={closeBar}
+          className=" visible md:invisible  cursor-pointer"
+        >
           <Closesvg />
         </span>
       </div>
@@ -37,7 +42,7 @@ const Sidebar = ({ open, showBar }) => {
               }
             >
               <svg
-                stroke-width="2"
+                strokeWidth="2"
                 width="18"
                 height="18"
                 viewBox="0 0 18 18"
@@ -93,7 +98,7 @@ const Sidebar = ({ open, showBar }) => {
             >
               <svg
                 fill="currentColor"
-                stroke-width="2"
+                strokeWidth="2"
                 width="20"
                 height="14"
                 viewBox="0 0 20 14"
@@ -112,7 +117,7 @@ const Sidebar = ({ open, showBar }) => {
           </li>
           <li>
             <NavLink
-              to={"/proformas"}
+              to={"/logout"}
               className={({ isActive }) =>
                 isActive
                   ? `flex items-center my-6 pl-4 text-sm font-black text-alml  border-l-4 border-alml transition-all`
@@ -121,7 +126,7 @@ const Sidebar = ({ open, showBar }) => {
             >
               <svg
                 fill="currentColor"
-                stroke-width="2"
+                strokeWidth="2"
                 width="22"
                 height="22"
                 viewBox="0 0 22 22"
@@ -140,8 +145,8 @@ const Sidebar = ({ open, showBar }) => {
         </ul>
       </div>
 
-      <div class=" mb-4  ">
-        <ul class="space-y-2">
+      <div className=" mb-4  ">
+        <ul className="space-y-2">
           <li className="uppercase pl-4 my-6 text-black">HELP</li>
 
           <li>
@@ -155,15 +160,15 @@ const Sidebar = ({ open, showBar }) => {
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6"
+                className="h-6 w-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                stroke-width="2"
+                strokeWidth="2"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
                 />
               </svg>

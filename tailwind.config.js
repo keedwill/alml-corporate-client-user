@@ -2,8 +2,6 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
 
   theme: {
-    
-   
     colors: {
       alml: "#6d057c",
       lightpurple: "#c722b0",
@@ -16,9 +14,10 @@ module.exports = {
       lightred: "#fde8e8",
       lightgreen: "#c6ea8a",
       green: "#008000",
+      blue: "#0000FF",
       skyblue: "#6ebce3",
       backgroundpurple: "#EDE3FF",
-      brown: "#fe6f27",
+      brown: "#de350b",
       darkgrey: "#737373",
       transparentBlack: "#00000095",
       gold: "#FFD700",
